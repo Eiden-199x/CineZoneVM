@@ -118,7 +118,11 @@ export const Home = () => {
 
       <section className="search">{/* Rest of the code */}</section>
       <section className="container mx-auto">
-        <h2 data-aos="flip-up" data-aos-duration="500">
+        <h2
+          className="text-3xl font-semibold text"
+          data-aos="flip-up"
+          data-aos-duration="500"
+        >
           Popular Movies
         </h2>
         <div id="popular-movies" className="grid-cols-4 gap-4 rounded-md">

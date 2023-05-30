@@ -41,33 +41,63 @@ export const TvDetails = () => {
           </a>
         </div>
         {/* <!-- Show Details Output --> */}
-        <div id="show-details">
-          <div className="details-top">
-            <div>
+        <div id="show-details flex flex-wrap flex-col">
+          <div className="details-top w-full md:w-8/12">
+            <div className="rounded-none md:rounded-t-lg">
               <img
                 src={`https://image.tmdb.org/t/p/w500/${tv.poster_path}`}
-                className="card-img-top h-auto max-w-lg"
+                className="card-img-top h-auto max-w-lg md:h-auto object-cover"
                 alt="Show Name"
               />
+              <div className="card-body p-5">
+                <h2 className="card-title text-white text-2xl font-bold mb-4">
+                  {tv.original_name}
+                </h2>
+                <p>
+                  <i className="fas fa-star text-primary"></i>
+                  {tv.vote_average} / 10
+                </p>
+                <p className="text-muted text-gray-400">
+                  Release Date: {tv.last_air_date}
+                </p>
+                <p className="card-text text-lg text-gray-400 mb-4">
+                  {tv.overview}
+                </p>
+                <h5 className="text-gray-400">Genres</h5>
+                <ul className="list-group text-gray-400">
+                  {tv.genres.map((genre) => (
+                    <li key={genre.id}>{genre.name}</li>
+                  ))}
+                </ul>
+                <a href="#" target="_blank" className="btn border-yellow-500">
+                  Visit Show Homepage
+                </a>
+              </div>
             </div>
-            <div>
-              <h2>{tv.original_name}</h2>
+            {/* <div className="card-body p-5">
+              <h2 className="card-title text-white text-2xl font-bold mb-4">
+                {tv.original_name}
+              </h2>
               <p>
                 <i className="fas fa-star text-primary"></i>
                 {tv.vote_average} / 10
               </p>
-              <p className="text-muted">Release Date: {tv.last_air_date}</p>
-              <p>{tv.overview}</p>
-              <h5>Genres</h5>
-              <ul className="list-group">
+              <p className="text-muted text-gray-400">
+                Release Date: {tv.last_air_date}
+              </p>
+              <p className="card-text text-lg text-gray-400 mb-4">
+                {tv.overview}
+              </p>
+              <h5 className="text-gray-400">Genres</h5>
+              <ul className="list-group text-gray-400">
                 {tv.genres.map((genre) => (
                   <li key={genre.id}>{genre.name}</li>
                 ))}
               </ul>
-              <a href="#" target="_blank" className="btn">
+              <a href="#" target="_blank" className="btn border-yellow-500">
                 Visit Show Homepage
               </a>
-            </div>
+            </div> */}
           </div>
           <div className="details-bottom">
             <h2>Show Info</h2>
